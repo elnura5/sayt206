@@ -1,0 +1,17 @@
+.productsformen{
+    background-image: url(https://preview.colorlib.com/theme/shop/img/men-bg.jpg.webp);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+
+    display: grid;
+justify-content: center;
+align-items: center;
+}

@@ -1,7 +1,7 @@
 
 import cors from "cors"
 import express from "express"
-import { connect,mongoose } from 'mongoose';
+import mongoose, { connect } from 'mongoose';
 const app = express()
 const port = 3000
 
@@ -19,16 +19,26 @@ const DataSchema = new mongoose.Schema({
     price:String
   });
   const Blog = mongoose.model('database', DataSchema);
-  app.get('/site',async (req, res) => {
+  app.get('/products',async (req, res) => {
     const data= await Blog.find()
       res.send(data)
   })
-  app.post('/site',async (req, res) => {
+  app.get('/products/:id',async (req, res) => {
+    const {id}=req.params
+    const data= await Blog.findById(id)
+      res.send(data)
+  })
+  app.post('/products',async (req, res) => {
     const {body}=req
     const data= await Blog.create(body)
       res.send(data)
   })
-
+  app.delete('/products/:id',async (req, res) => {
+    const {body}=req
+    const {id}=req.params
+    const data= await Blog.findByIdAndDelete(id,body)
+      res.send(data)
+  })
 
 
 main().catch(err => console.log(err));

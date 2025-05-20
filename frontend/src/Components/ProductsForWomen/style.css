@@ -1,0 +1,23 @@
+.products{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.head{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.product_price{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.productsforwomen{
+    height: 700px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
